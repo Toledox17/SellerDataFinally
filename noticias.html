@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>SellerData - Start</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+    <!-- Noticias -->
+    <section class="page-section" id="services">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Noticias</h2>
+                <h3 class="section-subheading text-muted">Aquí puedes ver las noticias más relevantes.</h3>
+            </div>
+            <div class="row text-center" id="noticiasContainer">
+                <!-- Aquí se agregarán dinámicamente las noticias -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+    <script>
+        // Función para agregar noticias
+        function agregarNoticia(titulo, categoria, descripcion, enlace) {
+            var noticiasContainer = document.getElementById('noticiasContainer');
+
+            var noticiaHTML = `
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa-solid fa-${categoria.toLowerCase()}"></i>
+                    </span>
+                    <h4 class="my-3">${titulo}</h4>
+                    <p class="text-muted">${descripcion}<br />
+                    Para más información, <a href="${enlace}">ver aquí</a>.</p>
+                </div>
+            `;
+
+            noticiasContainer.innerHTML += noticiaHTML;
+        }
+
+        // Ejemplo de uso de la función agregarNoticia
+        agregarNoticia(
+            'Economía',
+            'Money-bill-trend-up',
+            'Vendedores informales: así pueden inscribirse en el Instituto para la Economía Social para recibir beneficios.',
+            'https://www.infobae.com/colombia/2023/04/20/vendedores-informales-asi-pueden-inscribirse-en-el-instituto-para-la-economia-social-para-recibir-beneficios/'
+        );
+        agregarNoticia(
+            'Empleo',
+            'User',
+            '¿Vives en Kennedy y estás sin trabajo? Hay 1.000 vacantes en feria del Distrito.',
+            'https://bogota.gov.co/mi-ciudad/desarrollo-economico/trabajo-si-hay-empleo-en-la-localidad-de-kennedy-son-1000-vacantes'
+        );
+        agregarNoticia(
+            'Medio Ambiente',
+            'Leaf',
+            'Protege las palmas silvestres en Semana Santa ¡Conoce las alternativas!',
+            'https://bogota.gov.co/mi-ciudad/ambiente/protege-las-palmas-silvestres-en-semana-santa-alternativas-y-mas'
+        );
+    </script>
+</body>
+</html>
